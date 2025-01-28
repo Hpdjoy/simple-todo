@@ -21,13 +21,13 @@ const inputHandler = function (){
 
       input.value = "";
        
-      const deletebtn = taskElem.querySelector("button")[1];
+      const deletebtn = taskElem.querySelector(".deletebtn");
        deletebtn.addEventListener("click",function (){
             taskElem.remove();
       });
 
 
-      const editbtn = taskElem.querySelectorAll("button")[0];
+      const editbtn = taskElem.querySelector(".editbtn");
       editbtn.addEventListener("click",function(){
             const newTask = prompt("Enter new task");
             taskElem.querySelector("li").innerText = newTask;
@@ -44,8 +44,10 @@ function createElement(newTask){
       const editBtn = document.createElement("button");
 
       btn.innerText="Delete";
+      btn.classList.add("deletebtn");
       list.innerText=newTask;
       editBtn.innerText = "Edit";
+      editBtn.classList.add("editbtn");
 
       div.appendChild(list);
       div.appendChild(editBtn);
